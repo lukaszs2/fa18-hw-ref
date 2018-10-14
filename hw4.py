@@ -13,7 +13,13 @@ most_common_char
 Given an input string s, return the most common character in s.
 """
 def most_common_char(s):
-	pass
+	thisDic = {}
+	for i in range(len(s)):
+		if s[i:i+1] not in thisDic:
+			thisDic[s[i:i+1]] = 1
+		else:
+			thisDic[s[i:i+1]] += 1
+	return max(thisDic, key=lambda key: thisDic[key])
 
 
 """
